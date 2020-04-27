@@ -1,0 +1,27 @@
+img{
+    max-width: 30px!important;
+    height: auto;
+}
+
+.wrapperItunes{
+    width: 60px;
+    height: 60px;
+}
+.itunesImage{
+    width: 100%;
+    background-image: url(../files/itunes.png);
+    height: 100%;
+}
+
+.wrapperTvmaze{
+    width: 150px;
+    height: 60px;
+}
+.tvmazeImage{
+    width: 100%;
+    background-image: url(../files/tvmaze.png);
+    height: 100%;
+}
+.header{
+    margin: 20px 0px;
+}

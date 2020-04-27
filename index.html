@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div id="app">
+        
+        <div class="row ">
+        <div class="col col-sm-6 offset-3">
+        <div class="header">    
+        <h1>{{titulo}}</h1>
+        <input type="text" @keyup.enter='queryPost' v-model='searchName'>
+        <button class="btn btn-primary" @click='queryPost'>Consultar</button>
+        </div>
+        <div class="content" v-if="status">
+        <table class="table table-bordered ">
+            <thead>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Imagen</th>
+                <th>Fuente</th>
+            </thead>
+            <tbody>
+                <tr v-for="item in arraySortContent" >
+                    <td>{{item.trackName}}</td>
+                    <td>{{item.kind}}</td>
+                    <td><img class=".img-thumbnail" width="30px" height="auto" v-bind:src="item.artworkUrl30" alt=""></td>
+                    <td>
+                        <div class="wrapperItunes">
+                            <div class="itunesImage"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered">
+            <thead>
+                <th>Nombre</th>
+                <th>Idioma</th>
+                <th>URL</th>
+                <th>Fuente</th>
+            </thead>
+            <tbody>
+                <tr v-for="(item2,index) in arrayJsonContent2" >
+                    <td>{{item2.name}}</td>
+                    <td>{{item2.language}}</td>
+                    <td>{{item2.url}}</td>
+
+                    <td>
+                    <div class="wrapperTvmaze">
+                        <div class="tvmazeImage"></div>
+                    </div>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="/scripts/script.js"></script>
+
+
+</body>
+</html>
